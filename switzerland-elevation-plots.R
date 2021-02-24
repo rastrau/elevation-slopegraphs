@@ -43,8 +43,8 @@ ggsave(here("attempt-2.png"), q, width = 25, height = 19.3, units = "cm")
 # Third, finale version: Plot an areal slope graph with sky and a custom theme
 theme <- theme_void(base_size = 12) +
   theme(plot.tag = element_text(
-    size = rel(1.5),
-    lineheight = 1.15,
+    size = rel(1.3),
+    lineheight = 1.05,
     hjust = 0,
     face = "bold"
   )) +
@@ -59,9 +59,9 @@ r <-
   geom_area(aes(x = pos, y = elevation), fill = "#E6B63C") + # ground
   facet_geo( ~ canton, grid = "ch_cantons_grid2") +
   theme +
-  labs(tag = "Minimum and\nmaximum\nelevations",
+  labs(tag = "Switzerland:\nMinimum and\nmaximum\nelevations",
        caption = "\n@rastrau, idea by @philshem") +
-  theme(plot.tag.position = c(0, 0.935))
+  theme(plot.tag.position = c(0, 0.93))
 
 ggsave(here("switzerland-elevations.png"), r, width = 25, height = 19.3, 
        units = "cm")
@@ -71,9 +71,9 @@ r <- ggplot(df, aes(x = pos, y = max(df$elevation))) +
   geom_area(aes(x = pos, y = elevation), fill = "#E6B63C") + # ground
   facet_geo( ~ canton, grid = "ch_cantons_grid2") +
   theme +
-  labs(tag = "Minimum, mean,\nand maximum\nelevations",
+  labs(tag = "Switzerland:\nMinimum, mean,\nand maximum\nelevations",
        caption = "\n@rastrau, idea by @philshem") +
-  theme(plot.tag.position = c(0, 0.935))
+  theme(plot.tag.position = c(0, 0.93))
 
 ggsave(here("switzerland-elevations-with-mean.png"), r, width = 25, 
        height = 19.3, units = "cm")
