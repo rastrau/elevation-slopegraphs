@@ -24,8 +24,8 @@ grid_preview("europe_countries_grid2")
 # Plot an areal slope graph with sky and a custom theme
 theme <- theme_void(base_size = 7) +
   theme(plot.tag = element_text(
-    size = rel(3),
-    lineheight = 1.15,
+    size = rel(2.5),
+    lineheight = 1.05,
     hjust = 0,
     face = "bold"
   )) +
@@ -42,7 +42,7 @@ r <- ggplot(df, aes(x = pos, y = max(df$elevation))) +
   theme +
   labs(tag = "Minimum and maximum\nelevations in Europe",
        caption = "\n@rastrau, idea by @philshem") +
-  theme(plot.tag.position = c(0.0, 0.045))
+  theme(plot.tag.position = c(0.0, 0.037))
 
 ggsave(here("europe-elevations.png"), r, width = 21.8, height = 19.3, units = "cm")
 
